@@ -31,6 +31,7 @@ jobs:
         run: |
           unzip -q vkusno-prosto-github.zip -d project
           python3 project/build_pages.py --base-url "$SITE_URL" --metrika-id "$METRIKA_ID" --output dist
+          python3 vendor_photos.py dist "$SITE_URL"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
